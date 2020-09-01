@@ -1,9 +1,9 @@
 # Site settings
-title: Your Title Here
+title: Shribe with the world.
 description: > # this means to ignore newlines until "baseurl:"
-baseurl: "/creative-theme-jekyll-new/" # the subpath of your site, e.g. /blog/
+baseurl: "/shribe-me/" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
-author: Copyright &copy; 2019 - Start Bootstrap
+author: Shribe Team
 lang: en_US
 
 # Build settings
