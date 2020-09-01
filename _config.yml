@@ -1,111 +1,125 @@
-# ----
-# Site
+inc:
+  # Blog Information
+  title:        "Jekyll Incorporated"
+  subtitle:     "Modern Jekyll based blog for companies"
+  cover_image:  blog-cover.jpg
+  logo:         logo.png
+  
+  # Company information
+  company:      Incorporated
+  url:          http://sendtoinc.com/
+  facebook:     sendtoinc
+  twitter:      sendtoinc
+  gplus:        '101183822199340201470'
+  about_link:   https://sendtoinc.com/about/
+  
+  # Product Information
+  product_link: http://incorporated.sendtoinc.com/
+  tagline:      "Get a modern blog for your company"
+  
+  # Comments
+  disqus:
+    # Eg. "exampleblog" Set to false to disable comments
+    shortname:  false
+  
+  # Sharing settings
+  sharing:
+    twitter:    false
+    facebook:   false
+    gplus:      false
+    hn:         false
+    
+  
+ # Analytics     
+  analytics:
+    google: false # Add tracking code in _includes/_google-analytics.html
+      
+      
+  # Google Fonts
+  # eg. 'Droid+Sans:400,700|Droid+Serif:400,700'
+  google_font: 'Droid+Sans:400,700'
+  
+  # Setup your fonts, colors etc at _assets/stylesheets/main.scss
 
-title: shribe.co - communicate with the world
-url: "shribe-me.github.io"
-baseurl: shribe-me
-google_analytics_key:
-google_maps_javascript_api_key:
-disqus_shortname:
+url:         http://incorporated.sendtoinc.com
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+include:     ['.htaccess']
+exclude:     []
+timezone:    nil
 
-# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
-logo: /siteicon.png
-description: Shribe in your native language.
-author:
-  name:
-  email:
-  twitter: # twitter username without the @ symbol
-social:
-  name: shribe
-  links:
-    - https://github.com/CloudCannon/hydra-jekyll-template
+# Show future posts
+future:      false
+show_drafts: nil
+limit_posts: 0
+pygments:    true
 
-# -----
-# Build
+relative_permalinks: true
 
-timezone: Etc/UTC
-
-collections:
-  staff_members:
-    _hide_content: true
-
+permalink:     pretty
+paginate_path: 'page:num'
 paginate: 10
-paginate_path: "/blog/:num/"
-permalink: pretty
 
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      _options:
-        content:
-          width: 1500
-          height: 2500
-  -
-    scope:
-      path: ""
-      type: "staff_members"
-    values:
-      _options:
-        image_path:
-          width: 600
-          height: 600
-  -
-    scope:
-      path: ""
-    values:
-      layout: "page"
-  -
-    scope:
-      path: "index.html"
-    values:
-      layout: "default"
-  -
-    scope:
-      path: "contact.html"
-    values:
-      full_width: true
+markdown:      maruku
+markdown_ext:  markdown,mkd,mkdn,md
+textile_ext:   textile
 
-jekyll-archives:
-  enabled:
-    - categories
+excerpt_separator: "<!-- more -->"
 
-plugins:
-  - jekyll-archives
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-feed
-  - jekyll-paginate
+safe:        false
+host:        0.0.0.0
+port:        4000
+baseurl:     /
+lsi:         false
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
-  - LICENCE
+maruku:
+  use_tex:    false
+  use_divs:   false
+  png_engine: blahtex
+  png_dir:    images/latex
+  png_url:    /images/latex
 
-# -----------
-# CloudCannon
+rdiscount:
+  extensions: []
 
-social_icons:
-  - Facebook
-  - Google Plus
-  - Instagram
-  - LinkedIn
-  - Pinterest
-  - Tumblr
-  - Twitter
-  - YouTube
-  - RSS
+redcarpet:
+  extensions: []
 
-_comments:
-  map: Update the map location and display settings.
-  latitude: Coordinates for the center marker on the map.
-  longitude: Coordinates for the center marker on the map.
-  zoom: The zoom level for the map.
-  pricing_table: Update the information in the pricing tables.
-  highlight: Emphasis the text
-  color: The background colour used in the plan name and call to action.
-  new_window: Open link in new window
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: false
+
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style
+
+redcloth:
+  hard_breaks: true
+
+#
+# jekyll-assets: see more at https://github.com/ixti/jekyll-assets
+#
+assets:
+
+  dirname: assets
+  baseurl: /assets/
+  sources:
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/images
+  js_compressor: uglifier
+  css_compressor: sass
+  cachebust: none
+  cache: false
+  gzip: [ text/css, application/javascript ]
+  debug: false
